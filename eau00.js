@@ -48,12 +48,13 @@ function listResult()
     return result; 
 }
 
-// Part 1: Error management
+// Part 1: Parsing
+
+// Part 2: Error management
 if (!validityCheck(nbArg))
 {
     console.log("No argument allowed.")
 }
-// Part 2: Parsing
 
 // Part 3: Resolution
 listResult();

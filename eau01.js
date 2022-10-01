@@ -1,6 +1,5 @@
-// This script lists every combination of 3 numbers in ascending order, and in ascending order themselves. Each combination of numbers has to be listed only once.
+// This script lists every combination of 2 numbers from 00 to 99 in ascending order, and in ascending order themselves. Each combination of numbers has to be listed only once.
 
-nbArg = process.argv.length;
 // Functions
 function validityCheck(nbArg)
 {
@@ -52,12 +51,14 @@ function listResult()
     return result;
 }
 
-// Part 1: Error management
+// Part 1: Parsing
+nbArg = process.argv.length;
+
+// Part 2: Error management
 if (!validityCheck(nbArg))
 {
     console.log("No argument allowed.")
 }
-// Part 2: Parsing
 
 // Part 3: Resolution
 listResult();
