@@ -16,36 +16,40 @@ function validityCheck(nbArg)
 
 function listResult()
 {
-    validNumbers = [];
+    validCombinations = [];
     var result;
-    for (let i = 0; i <= 9; i++)
+    for (let i = 0; i <= 9 ; i++)
     {
         for (let j = 0; j <= 9; j++)
         {
             for (let k = 0; k <= 9; k++)
             {
-                tempNumber1 = i+""+j+""+k;
-                tempNumber2 = k+""+i+""+j;
-                tempNumber3 = j+""+k+""+i;
-                if(i < j && j < k && !validNumbers.includes(tempNumber1) && !validNumbers.includes(tempNumber2) && !validNumbers.includes(tempNumber3))
+                for (let l = 0; l <= 9; l++)
                 {
-                    validNumbers.push(tempNumber1);   
+                    tempNumber1 = i + "" + j;
+                    tempNumber2 = k + "" + l;
+                    tempCombo1 = tempNumber1 + " " + tempNumber2;
+                    tempCombo2 = tempNumber2 + " " + tempNumber1;
+                    if (tempNumber1 < tempNumber2 && !validCombinations.includes(tempCombo1) && !validCombinations.includes(tempCombo2))
+                    {
+                        validCombinations.push(tempCombo1);
+                    }
                 }
             }
         }
     }
-    for(let i = 0; i < validNumbers.length; i++)
+    for (let i = 0; i < validCombinations.length; i++)
     {
         if (!result)
         {
-            result = validNumbers[i];
+            result = validCombinations[0];
         }
         else
         {
-            result = result + ", " + validNumbers[i];
+            result = result + ", " + validCombinations[i];
         }
     }
-    return result; 
+    return result;
 }
 
 // Part 1: Error management
