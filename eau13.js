@@ -29,25 +29,19 @@ function validityCheck(list)
     return true;
 }
 
-function my_bubble_sort(array)
+function my_select_sort(array)
 {
-    for (i = 0; i <= array.length - 2; i++)
+    for (i = 0; i < array.length - 1; i++)
     {
         minValue = i;
-        for (j = i + 1; j <= array.length - 1; j++ )
+        for (j = i + 1; j < array.length; j++ )
         {
-            if(array[j] < array[minValue])
+            if(+array[j] < +array[minValue])
             {
-                nbTemp = array[j];
+                temp = array[j];
                 array[j] = array[minValue];
-                array[minValue] = nbTemp;
+                array[minValue] = temp;
             }
-        }
-        if (minValue !== i)
-        {
-            nbTemp = array[i];
-            array[i] = array[minValue];
-            array[minValue] = nbTemp;
         }
     }
     new_array = array;
@@ -83,7 +77,7 @@ if (!nbArgCheck(nbArg) || !validityCheck(numbersList))
 }
 
 // Part 3: Resolution
-new_array = my_bubble_sort(numbersList);
+new_array = my_select_sort(numbersList);
 
 // Part 4: Result display
 console.log(formatResult(new_array)); 
