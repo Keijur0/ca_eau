@@ -1,4 +1,4 @@
-// This script takes a list of numbers as argument and will return the numbers of the list sorted in ascendent order, using bubble sort method
+// This script takes a list of numbers as argument and will return the numbers of the list sorted in ascendent order, using sort by selection method
 
 // Functions
 function nbArgCheck(nbArg)
@@ -31,16 +31,23 @@ function validityCheck(list)
 
 function my_bubble_sort(array)
 {
-    for (let i = 0; i < array.length; i++)
+    for (i = 0; i <= array.length - 2; i++)
     {
-        for(let j = 0; j < array.length - i; j++)
+        minValue = i;
+        for (j = i + 1; j <= array.length - 1; j++ )
         {
-            if (array[j+1] && +array[j] > +array[j+1])
+            if(array[j] < array[minValue])
             {
                 nbTemp = array[j];
-                array[j] = array[j+1];
-                array[j+1] = nbTemp;
+                array[j] = array[minValue];
+                array[minValue] = nbTemp;
             }
+        }
+        if (minValue !== i)
+        {
+            nbTemp = array[i];
+            array[i] = array[minValue];
+            array[minValue] = nbTemp;
         }
     }
     new_array = array;
