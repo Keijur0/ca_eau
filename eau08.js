@@ -1,20 +1,20 @@
 // This script takes 1 string as parameter and returns if it contains only numbers or not
 
 // Functions
-function validityCheck(nbArg)
+function validityCheck(param1)
 {
-    if (nbArg !== 3)
+    if (param1 !== 3)
     {
         return false;
     }
     return true;
 }
 
-function onlyNumbers(string)
+function onlyNumbers(param1)
 {
-    for (let i = 0; i < string.length; i++)
+    for (let i = 0; i < param1.length; i++)
     {
-        if (string.charCodeAt(i) < 48 || string.charCodeAt(i) > 57)
+        if (param1.charCodeAt(i) < 48 || param1.charCodeAt(i) > 57)
         {
             return false
         }
@@ -34,7 +34,7 @@ if (!validityCheck(nbArg))
 }
 
 // Part 3: Resolution
-onlyNumbers(string);
+result = onlyNumbers(string);
 
 // Part 4: Result display
-console.log(onlyNumbers(string)); 
+console.log(result); 

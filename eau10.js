@@ -1,20 +1,20 @@
 // This script takes strings as arguments and return the index of the last argument if it has been found in the rest of arguments.
 
 // Functions
-function nbArgCheck(nbArg)
+function nbArgCheck(param1)
 {
-    if (nbArg < 4)
+    if (param1 < 4)
     {
         return false;
     }
     return true;
 }
 
-function findIndex(string, string1)
+function findIndex(param1, param2)
 {
-    for (i = 0; i < string.length; i++)
+    for (i = 0; i < param1.length; i++)
     {
-        if (string1 == string[i])
+        if (param2 == param1[i])
         {
             return i;
         }
@@ -36,7 +36,7 @@ if (!nbArgCheck(nbArg))
 }
 
 // Part 3: Resolution
-findIndex(string, wanted);
+index = findIndex(string, wanted);
 
 // Part 4: Result display
-console.log(findIndex(string, wanted)); 
+console.log(index); 

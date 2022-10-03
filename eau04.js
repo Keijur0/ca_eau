@@ -1,19 +1,19 @@
 // This script takes a number as parameter and returns the closest higher prime number.
 
 // Functions
-function validityCheck(nbArg, number)
+function validityCheck(param1, param2)
 {
-    if (nbArg !== 3)
+    if (param1 !== 3)
     {
         return false;
     }
-    else if (number < 0)
+    else if (param2 < 0)
     {
         return false;
     }
-    for (let i = 0; i < number.length; i++)
+    for (let i = 0; i < param2.length; i++)
     {
-        if (number.charCodeAt(i) < 48 || number.charCodeAt(i) > 57)
+        if (param2.charCodeAt(i) < 48 || param2.charCodeAt(i) > 57)
         {
             return false;
         }
@@ -21,27 +21,28 @@ function validityCheck(nbArg, number)
     return true;
 }
 
-function nextPrimeNum(number)
+function nextPrimeNum(param1)
 {
     factors = [];
+    // For all the next numbers, dividing by all numbers from 1 to that number. That until a number has strictly 2 factors
     do
     {
         i = 1;
-        number++;
+        param1++;
         do 
         {
-            if (Number.isInteger(number/i))
+            if (Number.isInteger(param1/i))
             {
                 factors.push(i);
             }
             i++;
-        } while (i <= number);
+        } while (i <= param1);
         if (factors.length !== 2)
         {
             factors = [];
         }
     } while (factors.length !== 2);
-    return number;
+    return param1;
 }
 
 // Part 1: Parsing
@@ -56,7 +57,7 @@ if (!validityCheck(nbArg, number))
 }
 
 // Part 3: Resolution
-nextPrimeNum(number);
+result = nextPrimeNum(number);
 
 // Part 4: Result display
-console.log(nextPrimeNum(number)); 
+console.log(result); 

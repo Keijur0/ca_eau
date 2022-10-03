@@ -1,26 +1,26 @@
 // This script takes numbers as arguments and returns the lowest difference between all of them
 
 // Functions
-function nbArgCheck(nbArg)
+function nbArgCheck(param1)
 {
-    if (nbArg < 4)
+    if (param1 < 4)
     {
         return false;
     }
     return true;
 }
 
-function validityCheck(list)
+function validityCheck(param1)
 {
-    for (let i = 0; i < list.length; i++)
+    for (let i = 0; i < param1.length; i++)
     {
-        if (+list[i] < 0)
+        if (+param1[i] < 0)
         {
-            list[i] = -list[i];
+            param1[i] = -param1[i];
         }
-        for (let j = 0; j < list[i].length; j++)
+        for (let j = 0; j < param1[i].length; j++)
         {
-            if (list[i].charCodeAt(j) < 48 || list[i].charCodeAt(j) > 57)
+            if (param1[i].charCodeAt(j) < 48 || param1[i].charCodeAt(j) > 57)
             {
                 return false;
             }
@@ -29,24 +29,25 @@ function validityCheck(list)
     return true;
 }
 
-function ultMinDiff(list, list1)
+function ultMinDiff(param1, param2)
 {
     var difference;
     var minDifference;
-    for (let i = 0; i < list.length; i++)
+    for (let i = 0; i < param1.length; i++)
     {
-        for (let j = 0; j < list1.length; j++)
+        for (let j = 0; j < param2.length; j++)
         {
             if (i !== j)
             {
-                if (+list[i] < +list1[j])
+                if (+param1[i] < +param2[j])
                 {
-                    difference = list1[j] - list[i];
+                    difference = param2[j] - param1[i];
                 }
                 else
                 {
-                    difference = list[i] - list1[j];
+                    difference = param1[i] - param2[j];
                 }
+                // First difference will be the lowest, then change if a next difference is lower
                 if (!minDifference || difference < minDifference)
                 {
                     minDifference = difference;
@@ -70,7 +71,7 @@ if (!nbArgCheck(nbArg) || !validityCheck(numbersList))
 }
 
 // Part 3: Resolution
-ultMinDiff(numbersList, numbersList);
+result = ultMinDiff(numbersList, numbersList);
 
 // Part 4: Result display
-console.log(ultMinDiff(numbersList, numbersList)); 
+console.log(result); 

@@ -1,15 +1,15 @@
 // This script takes 1 string as parameter and returns it with a capital letter at the beginning of each word.
 
 // Functions
-function validityCheck(nbArg, string)
+function validityCheck(param1, param2)
 {
-    if (nbArg !== 3)
+    if (param1 !== 3)
     {
         return false;
     }
-    for (let i = 0; i < string.length; i++)
+    for (let i = 0; i < param2.length; i++)
     {
-        if (string.charCodeAt(i) > 47 && string.charCodeAt(i) < 58)
+        if (param2.charCodeAt(i) > 47 && param2.charCodeAt(i) < 58)
         {
             return false;
         }
@@ -17,22 +17,23 @@ function validityCheck(nbArg, string)
     return true;
 }
 
-function capFirstLetters(string)
+function capFirstLetters(param1)
 {
     newString = [];
-    string = string.split(' ');
-    stringSize = string.length;
+    param1 = param1.split(' ');
+    size = param1.length;
     var result;
-    for (let i = 0; i < stringSize; i++)
+    for (let i = 0; i < size; i++)
     {
-        if (string[i].charCodeAt(0) > 96 && string[i].charCodeAt(0) < 123)
+        if (param1[i].charCodeAt(0) > 96 && param1[i].charCodeAt(0) < 123)
         {
-            tempWord = string[i][0].toUpperCase() + string[i].slice(1);
+            // Uppercase on first letter, completing with the rest of the initial word
+            tempWord = param1[i][0].toUpperCase() + param1[i].slice(1);
             newString.push(tempWord);
         }
         else
         {
-            newString.push(string[i]);
+            newString.push(param1[i]);
         }
     }
     for (let i = 0; i < newString.length; i++)
@@ -61,7 +62,7 @@ if (!validityCheck(nbArg, string))
 }
 
 // Part 3: Resolution
-capFirstLetters(string);
+finalResult = capFirstLetters(string);
 
 // Part 4: Result display
-console.log(capFirstLetters(string)); 
+console.log(finalResult); 

@@ -1,22 +1,22 @@
 // This script takes 2 strings as parameters and returns if the 2nd string is in the first one
 
 // Functions
-function validityCheck(nbArg, string1, string2)
+function validityCheck(param1, param2, param3)
 {
-    if (nbArg !== 4)
+    if (param1 !== 4)
     {
         return false;
     }
-    for (let i = 0; i < string1.length; i++)
+    for (let i = 0; i < param2.length; i++)
     {
-        if (string1.charCodeAt(i) < 97 || string1.charCodeAt(i) > 122)
+        if (param2.charCodeAt(i) < 97 || param2.charCodeAt(i) > 122)
         {
             return false;
         }
     }
-    for (let i = 0; i < string2.length; i++)
+    for (let i = 0; i < param3.length; i++)
     {
-        if (string2.charCodeAt(i) < 97 || string2.charCodeAt(i) > 122)
+        if (param3.charCodeAt(i) < 97 || param3.charCodeAt(i) > 122)
         {
             return false;
         }
@@ -24,26 +24,27 @@ function validityCheck(nbArg, string1, string2)
     return true;
 }
 
-function stringIncluded(string1, string2)
+function stringIncluded(param1, param2)
 {
-    if (string2.length > string1.length)
+    if (param2.length > param1.length)
     {
         return false;
     }
     else
     {
+        // Comparing the whole 2nd string to the 1st string, from index 0 advancing letter by letter and see if one combination matches.
         similar = 0;
-        for (let i = 1; i < string1.length; i++)
+        for (let i = 1; i < param1.length; i++)
         {
-            for (let j = 1; j < string2.length; j++)
+            for (let j = 1; j < param2.length; j++)
             {
-                if (string2[j] == string1[i] && string2[j-1] == string1[i-1])
+                if (param2[j] == param1[i] && param2[j-1] == param1[i-1])
                 {
                     similar++;
                 }
             }
         }
-        if (similar == string2.length - 1)
+        if (similar == param2.length - 1)
         {
             return true;
         }
@@ -67,7 +68,7 @@ if (!validityCheck(nbArg, string1, string2))
 }
 
 // Part 3: Resolution
-stringIncluded(string1, string2);
+result = stringIncluded(string1, string2);
 
 // Part 4: Result display
-console.log(stringIncluded(string1, string2)); 
+console.log(result); 

@@ -1,26 +1,26 @@
 // This script takes a list of numbers as argument and will return the numbers of the list sorted in ascendent order, using bubble sort method
 
 // Functions
-function nbArgCheck(nbArg)
+function nbArgCheck(param1)
 {
-    if (nbArg < 4)
+    if (param1 < 4)
     {
         return false;
     }
     return true;
 }
 
-function validityCheck(list)
+function validityCheck(param1)
 {
-    for (let i = 0; i < list.length; i++)
+    for (let i = 0; i < param1.length; i++)
     {
-        if (+list[i] < 0)
+        if (+param1[i] < 0)
         {
-            list[i] = -list[i];
+            param1[i] = -param1[i];
         }
-        for (let j = 0; j < list[i].length; j++)
+        for (let j = 0; j < param1[i].length; j++)
         {
-            if (list[i].charCodeAt(j) < 48 || list[i].charCodeAt(j) > 57)
+            if (param1[i].charCodeAt(j) < 48 || param1[i].charCodeAt(j) > 57)
             {
                 return false;
             }

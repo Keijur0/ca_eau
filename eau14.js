@@ -1,9 +1,9 @@
 // This script takes a list of strings and returns them sorted by ascii order
 
 // Functions
-function nbArgCheck(nbArg)
+function nbArgCheck(param1)
 {
-    if (nbArg < 4)
+    if (param1 < 4)
     {
         return false;
     }

@@ -1,9 +1,9 @@
 // This script takes a list of numbers as argument and will return the numbers of the list sorted in ascendent order, using sort by selection method
 
 // Functions
-function nbArgCheck(nbArg)
+function nbArgCheck(param1)
 {
-    if (nbArg < 4)
+    if (param1 < 4)
     {
         return false;
     }

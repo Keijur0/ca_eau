@@ -1,23 +1,23 @@
 // This script takes 2 numbers as arguments and returns every values between them. Min value included, max value excluded
 
 // Functions
-function nbArgCheck(nbArg)
+function nbArgCheck(param1)
 {
-    if (nbArg !== 4)
+    if (param1 !== 4)
     {
         return false;
     }
     return true;
 }
-function validityCheck(number)
+function validityCheck(param1)
 {
-    if (number < 0)
+    if (param1 < 0)
     {
-        number = -number;
+        param1 = -param1;
     }
-    for (let i = 0; i < number.length; i++)
+    for (let i = 0; i < param1.length; i++)
     {
-        if (number.charCodeAt(i) < 48 || number.charCodeAt(i) > 57)
+        if (param1.charCodeAt(i) < 48 || param1.charCodeAt(i) > 57)
         {
             return false
         }
@@ -25,13 +25,13 @@ function validityCheck(number)
     return true;
 }
 
-function middleValues(number1, number2)
+function middleValues(param1, param2)
 {
-    if (number1 > number2)
+    if (param1 > param2)
     {
-        tempNumber = number1;
-        number1 = number2;
-        number2 = tempNumber;
+        tempNumber = param1;
+        param1 = param2;
+        param2 = tempNumber;
 
     }
     var result;
@@ -39,14 +39,14 @@ function middleValues(number1, number2)
     {
         if (!result)
         {
-            result = number1;
+            result = param1;
         }
         else
         {
-            result = result + " " + number1;
+            result = result + " " + param1;
         }
-        number1++
-    } while(number1 < number2)
+        param1++
+    } while(param1 < param2)
     return result;
 }
 
@@ -63,7 +63,7 @@ if (!nbArgCheck(nbArg) || !validityCheck(number1) || !validityCheck(number2))
 }
 
 // Part 3: Resolution
-middleValues(number1, number2);
+result = middleValues(number1, number2);
 
 // Part 4: Result display
-console.log(middleValues(number1, number2)); 
+console.log(result); 

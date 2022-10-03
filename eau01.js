@@ -1,9 +1,9 @@
 // This script lists every combination of 2 numbers from 00 to 99 in ascending order, and in ascending order themselves. Each combination of numbers has to be listed only once.
 
 // Functions
-function validityCheck(nbArg)
+function validityCheck(param1)
 {
-    if (nbArg > 2)
+    if (param1 > 2)
     {
         return false;
     }
@@ -29,6 +29,7 @@ function listResult()
                     tempNumber2 = k + "" + l;
                     tempCombo1 = tempNumber1 + " " + tempNumber2;
                     tempCombo2 = tempNumber2 + " " + tempNumber1;
+                    // Checking if any of these combination are in the array yet
                     if (tempNumber1 < tempNumber2 && !validCombinations.includes(tempCombo1) && !validCombinations.includes(tempCombo2))
                     {
                         validCombinations.push(tempCombo1);
@@ -61,7 +62,7 @@ if (!validityCheck(nbArg))
 }
 
 // Part 3: Resolution
-listResult();
+numbersList = listResult();
 
 // Part 4: Result display
-console.log(listResult());
+console.log(numbersList);

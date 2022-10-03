@@ -1,19 +1,19 @@
 // This script takes a number as parameter and uses as index of Fibonacci Sequence to return the according value.
 
 // Functions
-function validityCheck(nbArg, number)
+function validityCheck(param1, param2)
 {
-    if (nbArg !== 3)
+    if (param1 !== 3)
     {
         return false;
     }
-    else if (number < 0)
+    else if (param2 < 0)
     {
         return false;
     }
-    for (let i = 0; i < number.length; i++)
+    for (let i = 0; i < param2.length; i++)
     {
-        if (number.charCodeAt(i) < 48 || number.charCodeAt(i) > 57)
+        if (param2.charCodeAt(i) < 48 || param2.charCodeAt(i) > 57)
         {
             return false;
         }
@@ -21,13 +21,13 @@ function validityCheck(nbArg, number)
     return true;
 }
 
-function fiboResult(number)
+function fiboResult(param1)
 {
-    if (number == 0)
+    if (param1 == 0)
     {
         return 0;
     }
-    else if (number == 1)
+    else if (param1 == 1)
     {
         return 1;
     }
@@ -38,15 +38,16 @@ function fiboResult(number)
         i = 2;
         do
         {
+            // Calculating all sequence and saving the value until the index provided
             nb3 = nb1 + nb2;
-            index = nb3;
+            value = nb3;
             nb1 = nb2;
             nb2 = nb3;
             i++;
-        } while (i <= +number);
+        } while (i <= +param1);
     }
 
-    return index; 
+    return value; 
 }
 
 // Part 1: Parsing
@@ -62,7 +63,7 @@ if (!validityCheck(nbArg, number))
 
 
 // Part 3: Resolution
-fiboResult(number);
+result = fiboResult(number);
 
 // Part 4: Result display
-console.log(fiboResult(number)); 
+console.log(result); 

@@ -15,6 +15,7 @@ function validityCheck(nbArg)
 
 function listResult()
 {
+    // Filling the first value of the result so it's not null
     result = argList[argList.length - 1];
     for (let i = 1; i < argList.length; i++)
     {

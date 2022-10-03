@@ -2,9 +2,9 @@
 
 nbArg = process.argv.length;
 // Functions
-function validityCheck(nbArg)
+function validityCheck(param1)
 {
-    if (nbArg > 2)
+    if (param1 > 2)
     {
         return false;
     }
@@ -27,6 +27,7 @@ function listResult()
                 tempNumber1 = i+""+j+""+k;
                 tempNumber2 = k+""+i+""+j;
                 tempNumber3 = j+""+k+""+i;
+                // Checking if any combination is in the array yet
                 if(i < j && j < k && !validNumbers.includes(tempNumber1) && !validNumbers.includes(tempNumber2) && !validNumbers.includes(tempNumber3))
                 {
                     validNumbers.push(tempNumber1);   
@@ -57,7 +58,7 @@ if (!validityCheck(nbArg))
 }
 
 // Part 3: Resolution
-listResult();
+numbersList = listResult();
 
 // Part 4: Result display
-console.log(listResult());
+console.log(numbersList);
