@@ -34,8 +34,10 @@ function ascii_Sort(array)
                     array[j] = temp;
                     break;
                 }
-                else
-                {
+                else if (array[min].charCodeAt(k) == array[j].charCodeAt(k)){
+                    continue;
+                }
+                else{
                     break;
                 }
 
